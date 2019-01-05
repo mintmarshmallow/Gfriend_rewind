@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css?family=Gaegu');
+@import "reset.css";
+#clickx {
+  display: none
+}
+.popup {
+  position: fixed;
+  background-color: white;
+  width: 80%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+  box-shadow : rgba(0,0,0,0.5) 0 0 0 9999px;
+}
+label.xicon {
+  color: pink;
+  font-size: 3rem;
+  transition: .5s linear;
+  transition-delay: 2s;
+  align-self: flex-end;
+  cursor: pointer;
+}
+
+.popup.unvisible {
+  visibility: hidden;
+}
+.popup.visible {
+  visibility: visible;
+  animation: popupvisible 2s;
+}
+@keyframes popupvisible {
+  0%{
+    color:rgba(255, 255, 255, 0);
+    width: 0;
+  }
+  10% {
+    width: 5px;
+    color:rgba(255, 255, 255, 0);
+  }
+  99% {
+    color:rgba(255, 255, 255, 0);
+  }
+  100% {
+    color: pink;
+    border-color: pink
+  }
+}
+.projectheader {
+  font-size: 6rem;
+  color: pink;
+  border-bottom: 8px solid pink;
+  padding-bottom: 30px;
+  margin-bottom: 50px;
+  margin-top: 30px;
+}
+.projectinfo {
+  font-family: 'Gaegu', cursive;
+  font-size: 2rem;
+  color: pink;
+  margin-bottom:100px;
+  text-align: center;
+  transition: .5s linear;
+  transition-delay: 2s;
+  margin-left: 50px;
+  margin-right: 50px
+}
+.projectinfo.unvisible {
+  opacity: 0;
+  visibility: hidden;
+}
+p {
+  padding: 8px;
+
+}
+.introduction {
+    height:100vh;
+    background-image: url(./assets/img/Eunha.jpg);
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: 0%;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.intro {
+  height:150vh;
+
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: 0%;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#startRewindBtn {
+  color: rgb(204, 204, 204);
+  background-color: rgba(0,0,0,0.8);
+  box-shadow : rgba(0,0,0,0.8) 0 0 0 9999px;
+  transition: 1s linear;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+i.start-icon{
+  font-size: 15rem;
+}
+.unvisible {
+  opacity: 0;
+  visibility:collapse;
+}
