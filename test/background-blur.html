@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      .bg_img{
+
+        z-index:1;
+        width:100%; height:100%;
+      }
+      .blur:before {
+        content: '';
+        position: absolute;
+        top: 0; left:0; right:0; bottom:0;
+        background:url('../assets/img/Eunha.jpg');
+        z-index:-1;
+        filter: blur(5px);
+        -webkit-filter: blur(6px);
+        -moz-filter: blur(6px);
+        -o-filter: blur(6px);
+        -ms-filter: blur(6px);
+
+      }
+      p {
+        background-color: rgba(0, 0, 0, 0)
+      }
+      </style>
+  </head>
+  <body>
+    <div class="blur bg_img">
+	    <p style="color:#fff;">bg에만 blur가  적용되어야 한다면</p>
+    </div>
+
+  </body>
+</html>

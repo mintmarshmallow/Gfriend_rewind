@@ -1,0 +1,6 @@
+#container {
+  display:none
+}
+#container.show {
+  display: flex
+}

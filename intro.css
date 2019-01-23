@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Gaegu');
-@import "reset.css";
 #clickx {
   display: none
 }
@@ -18,18 +17,27 @@
   border-radius: 20px;
   box-shadow : rgba(0,0,0,0.5) 0 0 0 9999px;
 }
-label.xicon {
+#xIcon {
+  visibility: visible;
+  opacity: 1;
+  position: absolute;
+  top: 0.7em;
+  right: 1em;
   color: pink;
   font-size: 3rem;
   transition: .5s linear;
   transition-delay: 2s;
   align-self: flex-end;
-  cursor: pointer;
+}
+#xIcon.ununvisible {
+  display: none;
 }
 
 .popup.unvisible {
-  visibility: hidden;
+  visibility: collapse;
+  transition: 1s linear;
 }
+
 .popup.visible {
   visibility: visible;
   animation: popupvisible 2s;
@@ -79,28 +87,80 @@ p {
 
 }
 .introduction {
-    height:100vh;
-    background-image: url(./assets/img/Eunha.jpg);
-    background-size: cover;
-    background-position-x: center;
-    background-position-y: 0%;
-    background-attachment: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    overflow: auto;
+    z-index: 1;
 }
 .intro {
-  height:150vh;
-
-  background-size: cover;
-  background-position-x: center;
-  background-position-y: 0%;
-  background-attachment: fixed;
+  height:100vh;
+  width:100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+.intro:before {
+  content: '';
+  position: absolute;
+  top: 0; left:0; right:0; bottom:0;
+  z-index:-1;
+  background-image: url(./assets/img/Eunha.jpg);
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: 0%;
+  background-attachment: fixed;
+  transition: 2s ease-in;
+  transition-delay: 1s;
+}
+.intro.blured:before {
+  filter: blur(6px);
+  -webkit-filter: blur(6px);
+  -moz-filter: blur(6px);
+  -o-filter: blur(6px);
+}
+.intro .intro-text {
+  font-family: 'Gaegu', cursive;
+  color: aliceblue;
+}
+.intro .intro-text.visible {
+  visibility: visible;
+  opacity: 1;
+  width: 100%;
+  height: 50%;
+}
+.intro .intro-text p.title{
+  visibility: hidden;
+  opacity:0;
+  font-size: 5rem;
+  transition-delay: 0s;
+}
+.intro .intro-text p.title.visible{
+  visibility: visible;
+  opacity:1;
+  font-size: 5rem;
+  transition: 1s ease-in;
+  transition-delay: 1s
+}
+.intro .intro-text p {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  font-size: 5rem;
+  transition: 1s ease-in;
+  transform: translate(-50%, -50%);
+
+}
+.intro .intro-text p.visible {
+  visibility: visible;
+  opacity: 1;
+  transition: 1s ease-in;
+  transition-delay: 0s;
+}
+
 #startRewindBtn {
   color: rgb(204, 204, 204);
   background-color: rgba(0,0,0,0.8);
