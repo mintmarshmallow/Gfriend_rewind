@@ -1,5 +1,6 @@
 
 window.onload = function() {
+  //여기부터 인트로 부분의 로직 입니다.
     const introMusic = document.getElementById('introMusic');
     const xIcon = document.getElementById('xIcon');
     const intro = document.getElementById('intro');
@@ -25,9 +26,12 @@ window.onload = function() {
           console.log(currentTextIndex)
           if(currentTextIndex === allTextCount) {
             setTimeout(function() {
+              document.getElementsByClassName('scroll-down-guide')
+                .innerHTML = "scroll down"
               document.getElementById('container')
                 .classList.add('show');
             }, 2000)
+
           }
           currentTextIndex++;
         }, 4000);
@@ -60,6 +64,16 @@ window.onload = function() {
         introPopUp.classList.add('visible');
         projectInfo.classList.remove('unvisible');
         xIcon.classList.remove('unvisible')
+    }
+    //여기까지 인트로 로직 부분 입니다.
+    //여기부터 유리구슬 로직 부분입니다.
+    const allBranchCount = document.getElementsByClassName('lines-container')[0]
+      .childElementCount;
+    console.log(allBranchCount);
+    var i = 1;
+    while(i <= allBranchCount) {
+      document.querySelector('.center-line-branch:nth-child()')
+        .style
     }
 
 }
